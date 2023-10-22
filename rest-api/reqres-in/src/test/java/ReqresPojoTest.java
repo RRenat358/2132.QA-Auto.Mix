@@ -37,8 +37,8 @@ public class ReqresPojoTest {
     @Test
     @DisplayName("Успешная регистрация")
     public void successUserRegTest() {
-        Integer UserId = 4;
-        String UserPassword = "QpwL5tke4Pnpja7X4";
+        Long userId = 4L;
+        String userPassword = "QpwL5tke4Pnpja7X4";
         RestSpec.installSpec(RestSpec.requestSpec(BASE_PATH), RestSpec.responseSpecStatusCode(200));
 
 
