@@ -1,5 +1,4 @@
-package models.Auth;
-
+package models.auth;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,10 +9,10 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class SuccessUserAuth extends Auth{
+public class UserAuth {
 
-    private Long id;
-    private String token;
+    private String email;
+    private String password;
 
 
 }

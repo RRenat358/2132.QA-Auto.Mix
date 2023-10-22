@@ -1,4 +1,4 @@
-package models.Auth;
+package models.auth;
 
 
 import lombok.AllArgsConstructor;
@@ -11,7 +11,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UnSuccessUserAuth extends Auth{
+public class UnSuccessUserUserAuth extends UserAuth {
 
     private String error;
 
