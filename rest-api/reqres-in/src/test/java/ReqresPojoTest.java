@@ -1,8 +1,5 @@
 
 import io.restassured.http.ContentType;
-import io.restassured.internal.common.assertion.AssertParameter;
-import io.restassured.internal.common.assertion.Assertion;
-import org.apache.groovy.json.internal.CacheType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -18,17 +15,18 @@ public class ReqresPojoTest {
     @Test
     public void compareIdAndNameAvatar() {
         List<UserDTO> userDTOList = given()
-
                 .when()
                 .contentType(ContentType.JSON)
                 .get(BASE_PATH + "/api/users?page=2")
-
                 .then()
                 .log().all()
                 .extract().body().jsonPath().getList("data", UserDTO.class);
 
         userDTOList.forEach(userDTO ->
                 Assertions.assertTrue(userDTO.getAvatar().contains(userDTO.getId().toString())));
+
+        Assertions.assertTrue(userDTOList.stream().allMatch(userDTO ->
+                userDTO.getEmail().endsWith("@reqres.in")));
 
     }
 
