@@ -1,5 +1,6 @@
 
 import io.restassured.http.ContentType;
+import models.ColorsDto;
 import models.auth.UnSuccessUserUserAuth;
 import models.auth.UserAuth;
 import models.auth.SuccessUserAuth;
@@ -10,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import restSpecification.RestSpec;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static io.restassured.RestAssured.given;
 
@@ -80,6 +82,24 @@ public class ReqresPojoTest {
         Assertions.assertEquals("Missing password", unSuccessUserUserAuth.getError());
     }
 
+    @Test
+    @DisplayName("Года отсортированы по возрастанию")
+    public void checkSortedYearsTest(){
+        RestSpec.installSpec(RestSpec.requestSpec(BASE_PATH),
+                RestSpec.responseSpecStatusCode(200));
+        List<ColorsDto> data = given()
+                .when()
+                .get("/api/unknown")
+                .then()
+                .log().all()
+                .extract().body().jsonPath().getList("data", ColorsDto.class);
+
+        List<Integer> dataYears = data.stream().map(ColorsDto::getYear).collect(Collectors.toList());
+        List<Integer> sortedDataYears = dataYears.stream().sorted().collect(Collectors.toList());
+        Assertions.assertEquals(dataYears, sortedDataYears);
+        System.out.println(dataYears);
+        System.out.println(sortedDataYears);
+    }
 
 
 
