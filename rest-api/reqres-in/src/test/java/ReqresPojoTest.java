@@ -1,6 +1,8 @@
 
 import io.restassured.http.ContentType;
 import models.ColorsDto;
+import models.UserFieldTime;
+import models.UserFieldTimeResponse;
 import models.auth.UnSuccessUserUserAuth;
 import models.auth.UserAuth;
 import models.auth.SuccessUserAuth;
@@ -10,6 +12,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import restSpecification.RestSpec;
 
+import java.time.Clock;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -101,8 +104,42 @@ public class ReqresPojoTest {
         System.out.println(sortedDataYears);
     }
 
+    @Test
+    @DisplayName("Удаление пользователя")
+    public void deleteUserTest(){
+        RestSpec.installSpec(RestSpec.requestSpec(BASE_PATH),
+                RestSpec.responseSpecStatusCode(204));
+        given().when().delete("/api/users/2")
+                .then()
+                .log().all();
+    }
 
 
+    @Test
+    @DisplayName("Время сервера и компьютера совпадают")
+    public void checkServerAndPcDateTest(){
+        RestSpec.installSpec(RestSpec.requestSpec(BASE_PATH),
+                RestSpec.responseSpecStatusCode(200));
+        UserFieldTime userFieldTime = new UserFieldTime("morpheus","zion resident");
+        UserFieldTimeResponse response = given()
+                .body(userFieldTime)
+                .when()
+                .put("/api/users/2")
+                .then().log().all()
+                .extract().as(UserFieldTimeResponse.class);
+        String currentTime = Clock.systemUTC().instant().toString();
+
+        //так как время считается в плоть до миллисекунд,
+        // необходимо убрать последние N символов,
+        // чтобы время было примерно одинаковое
+        String regex5 = "(.{5})$";
+        String responseShort = response.getUpdatedAt().replaceAll(regex5,"");
+
+        String regex11 = "(.{11})$";
+        String currentTimeShort = currentTime.replaceAll(regex11,"");
+
+        Assertions.assertEquals(responseShort,currentTimeShort);
+    }
 
 
 
