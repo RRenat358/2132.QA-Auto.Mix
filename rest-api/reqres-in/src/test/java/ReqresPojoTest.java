@@ -1,7 +1,10 @@
 
 import io.restassured.http.ContentType;
+import models.UserDto;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import restSpecification.RestSpec;
 
 import java.util.List;
 
@@ -13,6 +16,7 @@ public class ReqresPojoTest {
 
 
     @Test
+    @DisplayName("Аватары содержат id пользователей")
     public void compareIdAndNameAvatar() {
         List<UserDto> userDtoList = given()
                 .when()
@@ -29,6 +33,19 @@ public class ReqresPojoTest {
                 userDto.getEmail().endsWith("@reqres.in")));
 
     }
+
+    @Test
+    @DisplayName("Успешная регистрация")
+    public void successUserRegTest() {
+        Integer UserId = 4;
+        String UserPassword = "QpwL5tke4Pnpja7X4";
+        RestSpec.installSpec(RestSpec.requestSpec(BASE_PATH), RestSpec.responseSpecStatusCode(200));
+
+
+
+    }
+
+
 
 
 }
