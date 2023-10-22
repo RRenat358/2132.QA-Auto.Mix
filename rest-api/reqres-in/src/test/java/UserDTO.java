@@ -1,4 +1,3 @@
-//import lombok.Getter;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +8,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class DataDTO {
+public class UserDTO {
 
     private Long id;
     private String email;

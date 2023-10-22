@@ -5,7 +5,6 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-<!--        <artifactId>QA-Auto.Mix</artifactId>-->
         <artifactId>rest-api</artifactId>
         <groupId>ru.rrenat358</groupId>
         <version>0.0.1-SNAPSHOT</version>
