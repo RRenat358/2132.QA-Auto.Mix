@@ -17,6 +17,7 @@
 
 
     <modules>
+        <module>properties-file</module>
         <module>reqres-in</module>
     </modules>
 
