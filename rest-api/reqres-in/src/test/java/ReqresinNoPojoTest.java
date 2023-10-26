@@ -1,6 +1,7 @@
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import restSpecification.RestSpec;
 
@@ -49,6 +50,7 @@ public class ReqresinNoPojoTest {
 
 
     @Test
+    @DisplayName("Успешная регистрация")
     public void successUserAuth() {
         RestSpec.installSpec(RestSpec.requestSpec(BASE_PATH),
                 RestSpec.responseSpecStatusCode(200));
@@ -70,10 +72,26 @@ public class ReqresinNoPojoTest {
         Assertions.assertEquals(4,id);
         Assertions.assertEquals("QpwL5tke4Pnpja7X4", token);
 
-
     }
 
+    @Test
+    @DisplayName("Не успешная регистрация (не введен пароль)")
+    public void unSuccessUserAuth(){
+        RestSpec.installSpec(RestSpec.requestSpec(BASE_PATH),
+                RestSpec.responseSpecStatusCode(400));
+        Map<String, String> userLogoPass = new HashMap<>();
+        userLogoPass.put("email", "sydney@fife");
+        Response response = given()
+                .body(userLogoPass)
+                .when()
+                .post("api/register")
+                .then().log().all()
+                .extract().response();
+        JsonPath jsonPath = response.jsonPath();
+        String error = jsonPath.get("error");
+        Assertions.assertEquals("Missing password", error);
 
+    }
 
 
 
