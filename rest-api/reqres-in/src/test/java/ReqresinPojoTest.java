@@ -18,13 +18,14 @@ import java.util.stream.Collectors;
 
 import static io.restassured.RestAssured.given;
 
-public class ReqresPojoTest {
+public class ReqresinPojoTest {
 
     private static final String BASE_PATH = "https://reqres.in";
 
 
     @Test
-    @DisplayName("Аватары содержат id пользователей")
+    @DisplayName("Аватары содержат id пользователей \n" +
+                 "email имеет окончание reqres.in")
     public void compareIdAndNameAvatar() {
         List<UserDto> userDtoList = given()
                 .when()
@@ -34,11 +35,30 @@ public class ReqresPojoTest {
                 .log().all()
                 .extract().body().jsonPath().getList("data", UserDto.class);
 
+        //проверка аватар содержит айди
         userDtoList.forEach(userDto ->
                 Assertions.assertTrue(userDto.getAvatar().contains(userDto.getId().toString())));
 
+        //проверка почты оканчиваются на reqres.in
         Assertions.assertTrue(userDtoList.stream().allMatch(userDto ->
                 userDto.getEmail().endsWith("@reqres.in")));
+
+
+        //2 способ сравнивать значения через получения списков
+        //список с аватарками
+        List<String>userAvatarsList  = userDtoList.stream()
+                .map(UserDto::getAvatar)
+                .collect(Collectors.toList());
+        //список с айди
+        List<String> userIdList = userDtoList.stream()
+                .map(x->x.getId().toString())
+                .collect(Collectors.toList());
+        //проверка через сравнение двух списков
+        for (int i = 0; i<userAvatarsList.size(); i++){
+            Assertions.assertTrue(userAvatarsList.get(i).contains(userIdList.get(i)));
+        }
+
+
 
     }
 
@@ -67,7 +87,7 @@ public class ReqresPojoTest {
     }
 
     @Test
-    @DisplayName("Не успешная регистрация")
+    @DisplayName("Не успешная регистрация (не введен пароль)")
     public void unSuccessUserRegTest(){
         RestSpec.installSpec(RestSpec.requestSpec(BASE_PATH),
                 RestSpec.responseSpecStatusCode(400));
@@ -105,7 +125,7 @@ public class ReqresPojoTest {
     }
 
     @Test
-    @DisplayName("Удаление пользователя")
+    @DisplayName("Удаление 2-го пользователя")
     public void deleteUserTest(){
         RestSpec.installSpec(RestSpec.requestSpec(BASE_PATH),
                 RestSpec.responseSpecStatusCode(204));
@@ -115,8 +135,11 @@ public class ReqresPojoTest {
     }
 
 
+    //flaky test!!!
     @Test
-    @DisplayName("Время сервера и компьютера совпадают")
+    @DisplayName("обновить информацию о пользователе и \n" +
+                 "сравнить дату обновления с текущей датой на машине")
+
     public void checkServerAndPcDateTest(){
         RestSpec.installSpec(RestSpec.requestSpec(BASE_PATH),
                 RestSpec.responseSpecStatusCode(200));

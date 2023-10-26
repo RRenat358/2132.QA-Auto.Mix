@@ -1,0 +1,50 @@
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import restSpecification.RestSpec;
+
+import java.util.List;
+
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.notNullValue;
+
+public class ReqresinNoPojoTest {
+
+    private static final String BASE_PATH = "https://reqres.in";
+
+
+    @Test
+    public void getUserData_checkIdAndAvatar_checkTailEmail() {
+        RestSpec.installSpec(RestSpec.requestSpec(BASE_PATH),
+                RestSpec.responseSpecStatusCode(200));
+
+        Response response = given()
+                .when()
+                .get("api/users?page=2")
+                .then().log().all()
+                .body("page", equalTo(2))
+                .body("data.id", notNullValue())
+                .body("data.email", notNullValue())
+                .body("data.first_name", notNullValue())
+                .body("data.last_name", notNullValue())
+                .body("data.avatar", notNullValue())
+                .extract().response();
+
+        JsonPath jsonPath = response.jsonPath();
+        List<String> emailList = jsonPath.get("data.email");
+        List<Integer> idList = jsonPath.get("data.id");
+        List<String> avatarList = jsonPath.get("data.avatar");
+
+        for(int i = 0; i<avatarList.size(); i++){
+            Assertions.assertTrue(avatarList.get(i).contains(idList.get(i).toString()));
+        }
+
+        Assertions.assertTrue(emailList.stream().allMatch(x->x.endsWith("@reqres.in")));
+
+
+    }
+
+
+}
