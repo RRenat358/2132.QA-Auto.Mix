@@ -4,7 +4,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import restSpecification.RestSpec;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
@@ -43,8 +45,36 @@ public class ReqresinNoPojoTest {
 
         Assertions.assertTrue(emailList.stream().allMatch(x->x.endsWith("@reqres.in")));
 
+    }
+
+
+    @Test
+    public void successUserAuth() {
+        RestSpec.installSpec(RestSpec.requestSpec(BASE_PATH),
+                RestSpec.responseSpecStatusCode(200));
+
+        Map<String, String> userLogoPass = new HashMap<>();
+        userLogoPass.put("email", "eve.holt@reqres.in");
+        userLogoPass.put("password", "pistol");
+
+        Response response = given()
+                .body(userLogoPass)
+                .when()
+                .post("api/register")
+                .then().log().all()
+                .extract().response();
+        JsonPath jsonPath = response.jsonPath();
+        Integer id = jsonPath.get("id");
+        String token = jsonPath.get("token");
+
+        Assertions.assertEquals(4,id);
+        Assertions.assertEquals("QpwL5tke4Pnpja7X4", token);
+
 
     }
+
+
+
 
 
 }
