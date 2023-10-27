@@ -9,6 +9,7 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <modules>
+        <module>properties-file</module>
         <module>rest-api</module>
         <!--        <module>selenium</module>-->
         <!--        <module>selenide</module>-->
