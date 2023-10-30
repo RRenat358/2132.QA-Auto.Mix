@@ -4,19 +4,22 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+<!--
     <parent>
-        <artifactId>ui-tests-selenide</artifactId>
+        <artifactId>2132.QA-Auto.Mix</artifactId>
         <groupId>ru.rrenat358</groupId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath/>
     </parent>
+-->
 
-    <artifactId>hh-ru</artifactId>
-<!--    <groupId>ru.rrenat358</groupId>-->
-<!--    <version>0.0.1-SNAPSHOT</version>-->
+    <artifactId>hhru</artifactId>
+    <groupId>ru.rrenat358</groupId>
+    <version>0.0.1-SNAPSHOT</version>
 
 
-<!--
+
+
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -24,6 +27,7 @@
             <version>1.16.22</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
@@ -38,7 +42,5 @@
         </dependency>
 
     </dependencies>
--->
-
 
 </project>
