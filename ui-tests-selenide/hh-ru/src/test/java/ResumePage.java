@@ -21,7 +21,7 @@ public class ResumePage {
     public static String CITY = "Город";
     public static String AGE = "Возраст";
     public static String RELOCATE = "Готовность к переезду";
-    public static String CONFIRMED_PHONE = "Подтрвежденный номер телефона";
+    public static String CONFIRMED_PHONE = "Подтвержденный номер телефона";
 
     public ResumePage(String url) {
         Selenide.open(url);
