@@ -19,8 +19,15 @@ abstract public class BaseSelenideTest {
 //        Configuration.driverManagerEnabled = true;
         Configuration.webdriverLogsEnabled = true;
         Configuration.browser = "chrome";
-        Configuration.browserSize = "1920x1080"; // Full HD. 1080p
+//        Configuration.browserSize = "1920x1080"; // Full HD. 1080p
+        Configuration.browserSize = "1280x1280"; // Full HD. 1080p
         Configuration.headless = false;
+//        Configuration.headless = true;
+//        Configuration.browserVersion = "116";
+//        Configuration.pageLoadStrategy = "normal";
+        Configuration.pageLoadStrategy = "eager";
+//        Configuration.pageLoadStrategy = "none";
+//        Configuration.pageLoadTimeout = 5000;
     }
 
     /**

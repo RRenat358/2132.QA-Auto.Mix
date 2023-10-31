@@ -23,54 +23,81 @@
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
-<!--
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-&lt;!&ndash;                <version>2.5.15</version>&ndash;&gt;
-&lt;!&ndash;                <version>2.6.15</version>&ndash;&gt;
-&lt;!&ndash;                <version>2.7.17</version>&ndash;&gt;
-&lt;!&ndash;                <version>3.0.12</version>&ndash;&gt;
-                <version>3.1.5</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
--->
+    <!--
+        <dependencyManagement>
+            <dependencies>
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-dependencies</artifactId>
+                    &lt;!&ndash;  <version>3.0.12</version>&ndash;&gt;
+                    <version>3.1.5</version>
+                    <type>pom</type>
+                    <scope>import</scope>
+                </dependency>
+            </dependencies>
+        </dependencyManagement>
+    -->
 
     <!--============================================================-->
     <dependencies>
+
+
+        <!--
+                <dependency>
+                    <groupId>org.projectlombok</groupId>
+                    <artifactId>lombok</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-databind</artifactId>
+                </dependency>
+
+                <dependency>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                    <version>1.2</version>
+                </dependency>
+                <dependency>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-classic</artifactId>
+                </dependency>
+        -->
+
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-log4j2 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+            <version>3.1.5</version>
+        </dependency>
+
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
+            <version>1.18.30</version>
         </dependency>
 
-        <dependency>
-            <groupId>commons-logging</groupId>
-            <artifactId>commons-logging</artifactId>
-            <version>1.2</version>
-        </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-        </dependency>
-
-
-<!--
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>5.10.0</version>
             <scope>test</scope>
         </dependency>
--->
+
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <!--            <version>6.9.0</version>-->
+            <!--            <version>6.12.4</version>-->
+            <!--            <version>6.13.0</version>-->
+<!--            <version>6.15.0</version>-->
+<!--            <version>6.17.2</version>-->
+<!--            <version>6.18.0</version>-->
+<!--            <version>6.19.1</version>-->
+            <version>7.0.1</version>
+            <scope>test</scope>
+        </dependency>
+
 
         <!--
                 <dependency>
@@ -86,6 +113,14 @@
                     <artifactId>selenium-chrome-driver</artifactId>
                 </dependency>
         -->
+
+        <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>5.3.2</version>
+            <scope>test</scope>
+        </dependency>
 
         <!--
                 <dependency>
