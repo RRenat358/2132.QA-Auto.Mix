@@ -37,8 +37,8 @@ public class ResumePage {
     public Map<String,Object> getAttributes(){
         return new HashMap<String ,Object>(){{
             put(GENDER, getGenderHard());
-            put(CITY, getCityHard());
             put(AGE, getAge());
+            put(CITY, getCityHard());
             put(RELOCATE, isReadyToRelocate());
             put(CONFIRMED_PHONE, isPhoneConfirmed());
         }};

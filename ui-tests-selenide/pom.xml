@@ -6,16 +6,18 @@
 
     <packaging>pom</packaging>
 
+<!--
     <parent>
         <artifactId>2132.QA-Auto.Mix</artifactId>
         <groupId>ru.rrenat358</groupId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath/>
     </parent>
+-->
 
     <artifactId>ui-tests-selenide</artifactId>
-<!--    <groupId>ru.rrenat358</groupId>-->
-<!--    <version>0.0.1-SNAPSHOT</version>-->
+    <groupId>ru.rrenat358</groupId>
+    <version>0.0.1-SNAPSHOT</version>
 
 
     <modules>
