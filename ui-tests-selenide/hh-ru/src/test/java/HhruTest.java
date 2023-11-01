@@ -1,12 +1,20 @@
 import core.BaseSelenideTest;
 import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import static org.apache.logging.log4j.Level.ALL;
+import static org.apache.logging.log4j.Level.INFO;
+
 public class HhruTest extends BaseSelenideTest {
+
+    private static final Logger logger = LogManager.getLogger();
 
     private final static String URL_RESUME = "https://hh.ru/resume/e0025611ff0c2c54740039ed1f524d33484b7a";
 
@@ -33,32 +41,34 @@ public class HhruTest extends BaseSelenideTest {
         Assertions.assertEquals(expectedAttributes,actualAttributes);
     }
 
-/*
     @Test
     public void checkAttributesClass(){
         ResumePage resumePage = new ResumePage(URL_RESUME);
         //создаем экземпляр класса с ожидаемыми данными через конструктор
-        ResumePage2 expectedResume = new ResumePage2("М", "Санкт-Петербург",25, true,false);
+        ResumePage2 expectedResume = new ResumePage2("М", 41,"Москва", true,false);
 
         //получаем экземпляр класса с актуальными данными через конструктор
         ResumePage2 actualResume = new ResumePage2(
                 resumePage.getGenderEasy(),
-                resumePage.getCityEasy(),
                 resumePage.getAge(),
-                resumePage.isPhoneConfirmed(),
-                resumePage.isReadyToRelocate());
+                resumePage.getCityEasy(),
+                resumePage.isReadyToRelocate(),
+                resumePage.isPhoneConfirmed()
+        );
 
-        //1 способ сравнивнения классов
+        //1 способ сравнения классов
         Assertions.assertTrue(EqualsBuilder.reflectionEquals(expectedResume,actualResume));
+
+
+
 
         //2 способ сравнения отдельных переменных в классе
         Assertions.assertEquals(expectedResume.getGender(), actualResume.getGender());
-        Assertions.assertEquals(expectedResume.getCity(), actualResume.getCity());
         Assertions.assertEquals(expectedResume.getAge(), actualResume.getAge());
-        Assertions.assertEquals(expectedResume.isNumberConfirmed(), actualResume.isNumberConfirmed());
+        Assertions.assertEquals(expectedResume.getCity(), actualResume.getCity());
         Assertions.assertEquals(expectedResume.isReadyToRelocate(), actualResume.isReadyToRelocate());
+        Assertions.assertEquals(expectedResume.isNumberConfirmed(), actualResume.isNumberConfirmed());
     }
-*/
 
 
 
