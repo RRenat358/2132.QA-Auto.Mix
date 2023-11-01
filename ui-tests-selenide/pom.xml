@@ -13,18 +13,18 @@
         <relativePath/>
     </parent>
 
-    <artifactId>rest-api</artifactId>
+    <artifactId>ui-tests-selenide</artifactId>
 
 
     <modules>
-        <module>kucoin-com</module>
-        <module>reqres-in</module>
+        <module>hh-ru</module>
     </modules>
+
 
     <dependencies>
         <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>rest-assured</artifactId>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
         </dependency>
     </dependencies>
 
