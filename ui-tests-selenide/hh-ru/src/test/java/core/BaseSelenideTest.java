@@ -2,7 +2,7 @@ package core;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import io.github.bonigarcia.wdm.WebDriverManager;
+//import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 
@@ -15,12 +15,19 @@ abstract public class BaseSelenideTest {
      * Инициализация selenide с настройками
      */
     public void setUp(){
-        WebDriverManager.chromedriver().setup();
+//        WebDriverManager.chromedriver().setup();
 //        Configuration.driverManagerEnabled = true;
-//        Configuration.webdriverLogsEnabled = true;
+        Configuration.webdriverLogsEnabled = true;
         Configuration.browser = "chrome";
-        Configuration.browserSize = "1920x1080"; // Full HD. 1080p
+//        Configuration.browserSize = "1920x1080"; // Full HD. 1080p
+        Configuration.browserSize = "1280x1280"; // Full HD. 1080p
         Configuration.headless = false;
+//        Configuration.headless = true;
+//        Configuration.browserVersion = "116";
+//        Configuration.pageLoadStrategy = "normal";
+        Configuration.pageLoadStrategy = "eager";
+//        Configuration.pageLoadStrategy = "none";
+//        Configuration.pageLoadTimeout = 5000;
     }
 
     /**
