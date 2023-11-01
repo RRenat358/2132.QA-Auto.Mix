@@ -13,7 +13,6 @@
         <module>rest-api</module>
         <module>ui-tests-selenide</module>
         <!--        <module>ui-tests-selenium</module>-->
-        <module>hhru</module>
     </modules>
 
     <!--============================================================-->
