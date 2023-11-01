@@ -11,9 +11,7 @@ import org.junit.jupiter.api.BeforeEach;
  */
 abstract public class BaseSelenideTest {
 
-    /**
-     * Инициализация selenide с настройками
-     */
+
     public void setUp(){
 //        WebDriverManager.chromedriver().setup();
 //        Configuration.driverManagerEnabled = true;
@@ -34,17 +32,13 @@ abstract public class BaseSelenideTest {
 //        Configuration.pageLoadTimeout = 5000;
     }
 
-    /**
-     * Выполнение метода перед каждым запуском тестов
-     */
+
     @BeforeEach
     public void init(){
         setUp();
     }
 
-    /**
-     * Выполнение метода после каждого закрытия тестов
-     */
+
     @AfterEach
     public void tearDown(){
         Selenide.closeWebDriver();
