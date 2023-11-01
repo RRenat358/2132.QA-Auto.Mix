@@ -14,8 +14,6 @@
     </parent>
 
     <artifactId>ui-tests-selenide</artifactId>
-    <!--    <groupId>ru.rrenat358</groupId>-->
-    <!--    <version>0.0.1-SNAPSHOT</version>-->
 
 
     <modules>
@@ -24,52 +22,10 @@
 
 
     <dependencies>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-log4j2</artifactId>
-                        <version>3.1.5</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-<!--            <version>1.18.30</version>-->
-        </dependency>
-
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-<!--            <version>5.10.0</version>-->
-            <scope>test</scope>
-        </dependency>
-
         <dependency>
             <groupId>com.codeborne</groupId>
             <artifactId>selenide</artifactId>
-            <!--            <version>6.17.2</version>-->
-            <!--            <version>6.18.0</version>-->
-            <!--            <version>6.19.1</version>-->
-<!--            <version>7.0.1</version>-->
-            <scope>test</scope>
         </dependency>
-
-
-        <!--&lt;!&ndash;-->
-        <!--        <dependency>-->
-        <!--            <groupId>io.github.bonigarcia</groupId>-->
-        <!--            <artifactId>webdrivermanager</artifactId>-->
-        <!--            <version>5.6.0</version>-->
-        <!--&lt;!&ndash;            <version>5.4.1</version>&ndash;&gt;-->
-        <!--        </dependency>-->
-        <!--&ndash;&gt;-->
-
-
-        <!--        <dependency>-->
-        <!--            <groupId>io.rest-assured</groupId>-->
-        <!--            <artifactId>rest-assured</artifactId>-->
-        <!--            <scope>test</scope>-->
-        <!--        </dependency>-->
     </dependencies>
 
 
