@@ -17,10 +17,10 @@ public class LoginPage extends BaseSelenium {
         PageFactory.initElements(driver,this);
     }
 
-    public TicketsPage auth(String login, String password){
+    public ListingTicketsPage auth(String login, String password){
         loginField.sendKeys(login);
         passwordField.sendKeys(password, Keys.ENTER);
-        return new TicketsPage();
+        return new ListingTicketsPage();
     }
 
 }

@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class TicketPage extends BaseSelenium {
+public class NewTicketPage extends BaseSelenium {
     @FindBy(xpath = "//th[text()='Submitter E-Mail']/following::td[1]")
     private WebElement email;
 
@@ -15,7 +15,7 @@ public class TicketPage extends BaseSelenium {
     @FindBy(xpath = "//td[@id='ticket-description']//p")
     private WebElement body;
 
-    public TicketPage() {
+    public NewTicketPage() {
         PageFactory.initElements(driver,this);
     }
 
