@@ -4,31 +4,27 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <packaging>pom</packaging>
-
     <parent>
-        <artifactId>2132.QA-Auto.Mix</artifactId>
+        <artifactId>ui-tests-selenide</artifactId>
         <groupId>ru.rrenat358</groupId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath/>
     </parent>
 
-    <artifactId>ui-tests-selenide</artifactId>
+    <artifactId>wikipedia-org</artifactId>
 
+    <!--
+        <dependencies>
 
-    <modules>
-        <module>appleinsider-ru</module>
-        <module>hh-ru</module>
-        <module>wikipedia-org</module>
-    </modules>
+        //Прошлая версия для работы со [ElementsCollection.stream]
+            <dependency>
+                <groupId>com.codeborne</groupId>
+                <artifactId>selenide</artifactId>
+                <version>6.18.0</version>
+            </dependency>
 
-
-    <dependencies>
-        <dependency>
-            <groupId>com.codeborne</groupId>
-            <artifactId>selenide</artifactId>
-        </dependency>
-    </dependencies>
+        </dependencies>
+    -->
 
 
 </project>
