@@ -12,10 +12,6 @@ import static helpers.StringModifier.getUniqueString;
 public class CreatingTicketTest extends BaseSelenium {
 
 
-
-
-
-
     //вариант 2
     @Test
     public void checkTicket(){

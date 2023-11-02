@@ -29,12 +29,20 @@
         <junit-jupiter.v>5.10.0</junit-jupiter.v>
         <rest-assured.v>5.3.2</rest-assured.v>
 
+        <selenium-bom.v>4.15.0</selenium-bom.v>
+
 <!--        <selenium.v>4.13.0</selenium.v>-->
-        <selenium.v>4.14.1</selenium.v>
+<!--        <selenium.v>4.14.1</selenium.v>-->
+        <selenium.v>4.15.0</selenium.v>
+
         <!--        <selenide.v>6.17.2</selenide.v>-->
         <!--        <selenide.v>6.18.0</selenide.v>-->
         <!--        <selenide.v>6.19.1</selenide.v>-->
         <selenide.v>7.0.1</selenide.v>
+
+<!--        <webdrivermanager.v>5.4.1</webdrivermanager.v>-->
+<!--        <webdrivermanager.v>5.5.3</webdrivermanager.v>-->
+        <webdrivermanager.v>5.6.0</webdrivermanager.v>
 
         <jackson.v>2.15.3</jackson.v>
         <typesafe.v>1.4.3</typesafe.v>
@@ -50,9 +58,9 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
                 <version>${spring-boot.v}</version>
-                <!--                <type>pom</type>-->
-                <!--                <scope>import</scope>-->
-                <!--                <scope>provided</scope>-->
+                <!-- <type>pom</type>-->
+                <!-- <scope>import</scope>-->
+                <!-- <scope>provided</scope>-->
             </dependency>
 
             <dependency>
@@ -79,18 +87,18 @@
                 <version>${rest-assured.v}</version>
             </dependency>
 
-<!--
-            <dependency>
-                <groupId>org.assertj</groupId>
-                <artifactId>assertj-core</artifactId>
-            </dependency>
--->
+            <!--
+                        <dependency>
+                            <groupId>org.assertj</groupId>
+                            <artifactId>assertj-core</artifactId>
+                        </dependency>
+            -->
 
 <!--
             <dependency>
                 <groupId>org.seleniumhq.selenium</groupId>
                 <artifactId>selenium-bom</artifactId>
-                <version>${selenium.v}</version>
+                <version>${selenium-bom.v}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -115,6 +123,12 @@
                 <groupId>com.codeborne</groupId>
                 <artifactId>selenide</artifactId>
                 <version>${selenide.v}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.github.bonigarcia</groupId>
+                <artifactId>webdrivermanager</artifactId>
+                <version>${webdrivermanager.v}</version>
             </dependency>
 
 
