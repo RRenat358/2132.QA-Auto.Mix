@@ -13,10 +13,18 @@
 
     <artifactId>wikipedia-org</artifactId>
 
-<!--
-    <dependencies>
-    </dependencies>
--->
+    <!--
+        <dependencies>
+
+        //Прошлая версия для работы со [ElementsCollection.stream]
+            <dependency>
+                <groupId>com.codeborne</groupId>
+                <artifactId>selenide</artifactId>
+                <version>6.18.0</version>
+            </dependency>
+
+        </dependencies>
+    -->
 
 
 </project>

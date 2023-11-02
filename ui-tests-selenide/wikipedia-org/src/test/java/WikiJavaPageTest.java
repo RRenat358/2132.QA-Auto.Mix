@@ -22,8 +22,10 @@ public class WikiJavaPageTest extends BaseSelenideTest {
         Selenide.open("https://ru.wikipedia.org/wiki/Java");
         //обозначаем необходимые нам элементы в которых содержится атрибут href
         ElementsCollection hrefs = $$x("//div[@id='toc']//a[@href]");
+
         //создаем список, в который поместим ссылки
         List<String> links = new ArrayList<>();
+
         //1 способ заполнения списка значениями через цикл for each
         for (int i = 0; i < hrefs.size(); i++) {
             links.add(hrefs.get(i).getAttribute("href"));
@@ -66,13 +68,12 @@ public class WikiJavaPageTest extends BaseSelenideTest {
             links.remove(WebDriverRunner.getWebDriver().getCurrentUrl());
         }
 
-        //пример работы стримапи
+        //пример работы стримапи - уже устаревший в новой версии Selenide
 //        List<Integer> hrefSizeEach = hrefs.stream().map(x->x.getAttribute("href").length()).collect(Collectors.toList());
-//        List<Integer> hrefSizeEach = hrefs.forEach(x -> x.getAttribute("href").length());
+        // вариант через foreac
         List<Integer> hrefSizeEach = new ArrayList<>();
         hrefs.forEach(x -> hrefSizeEach.add(x.getAttribute("href").length()));
 
-        int i = 0;
 
 
 
