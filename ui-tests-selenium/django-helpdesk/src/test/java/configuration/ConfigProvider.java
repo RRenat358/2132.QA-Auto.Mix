@@ -21,4 +21,6 @@ public interface ConfigProvider {
     String DEMO_PASSWORD = readConfig().getString("usersParams.demo.password");
     String DEMO_LOGIN = readConfig().getString("usersParams.demo.login");
     Boolean IS_DEMO_ADMIN = readConfig().getBoolean("usersParams.demo.isAdmin");
+
+
 }
