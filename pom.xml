@@ -29,7 +29,8 @@
         <junit-jupiter.v>5.10.0</junit-jupiter.v>
         <rest-assured.v>5.3.2</rest-assured.v>
 
-        <selenium.v>4.13.0</selenium.v>
+<!--        <selenium.v>4.13.0</selenium.v>-->
+        <selenium.v>4.14.1</selenium.v>
         <!--        <selenide.v>6.17.2</selenide.v>-->
         <!--        <selenide.v>6.18.0</selenide.v>-->
         <!--        <selenide.v>6.19.1</selenide.v>-->
