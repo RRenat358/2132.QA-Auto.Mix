@@ -29,6 +29,10 @@
         <junit-jupiter.v>5.10.0</junit-jupiter.v>
         <rest-assured.v>5.3.2</rest-assured.v>
 
+        <selenium.v>4.13.0</selenium.v>
+        <!--        <selenide.v>6.17.2</selenide.v>-->
+        <!--        <selenide.v>6.18.0</selenide.v>-->
+        <!--        <selenide.v>6.19.1</selenide.v>-->
         <selenide.v>7.0.1</selenide.v>
 
         <jackson.v>2.15.3</jackson.v>
@@ -65,24 +69,50 @@
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter</artifactId>
                 <version>${junit-jupiter.v}</version>
-                <scope>test</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>com.codeborne</groupId>
-                <artifactId>selenide</artifactId>
-                <!--            <version>6.17.2</version>-->
-                <!--            <version>6.18.0</version>-->
-                <!--            <version>6.19.1</version>-->
-                <version>${selenide.v}</version>
-                <scope>test</scope>
             </dependency>
 
             <dependency>
                 <groupId>io.rest-assured</groupId>
                 <artifactId>rest-assured</artifactId>
                 <version>${rest-assured.v}</version>
-                <scope>test</scope>
+            </dependency>
+
+<!--
+            <dependency>
+                <groupId>org.assertj</groupId>
+                <artifactId>assertj-core</artifactId>
+            </dependency>
+-->
+
+<!--
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-bom</artifactId>
+                <version>${selenium.v}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+-->
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-java</artifactId>
+                <version>${selenium.v}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-api</artifactId>
+                <version>${selenium.v}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-chrome-driver</artifactId>
+                <version>${selenium.v}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.codeborne</groupId>
+                <artifactId>selenide</artifactId>
+                <version>${selenide.v}</version>
             </dependency>
 
 
@@ -116,29 +146,6 @@
             <artifactId>junit-jupiter</artifactId>
             <scope>test</scope>
         </dependency>
-
-        <!--
-                <dependency>
-                    <groupId>org.seleniumhq.selenium</groupId>
-                    <artifactId>selenium-java</artifactId>
-                </dependency>
-                <dependency>
-                    <groupId>org.seleniumhq.selenium</groupId>
-                    <artifactId>selenium-api</artifactId>
-                </dependency>
-                <dependency>
-                    <groupId>org.seleniumhq.selenium</groupId>
-                    <artifactId>selenium-chrome-driver</artifactId>
-                </dependency>
-        -->
-
-        <!--
-                <dependency>
-                    <groupId>org.assertj</groupId>
-                    <artifactId>assertj-core</artifactId>
-                    <scope>test</scope>
-                </dependency>
-        -->
 
         <!-- Core -->
         <dependency>
