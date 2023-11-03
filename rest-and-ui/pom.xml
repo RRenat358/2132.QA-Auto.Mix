@@ -13,22 +13,27 @@
 <!--        <relativePath/>-->
     </parent>
 
-    <artifactId>ui-tests-selenide</artifactId>
+    <artifactId>rest-and-ui</artifactId>
 
 
     <modules>
-        <module>appleinsider-ru</module>
-        <module>hh-ru</module>
-        <module>wikipedia-org</module>
+        <module>smshub-org</module>
     </modules>
 
 
     <dependencies>
         <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
             <groupId>com.codeborne</groupId>
             <artifactId>selenide</artifactId>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 
 
