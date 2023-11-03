@@ -17,6 +17,7 @@
 
 
     <modules>
+        <module>jsonplaceholder</module>
         <module>kucoin-com</module>
         <module>reqres-in</module>
     </modules>
