@@ -1,5 +1,14 @@
 package models;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Photo {
     private Integer albumId;
     private Integer id;
@@ -7,31 +16,5 @@ public class Photo {
     private String url;
     private String thumbnailUrl;
 
-    public Photo(Integer albumId, Integer id, String title, String url, String thumbnailUrl) {
-        this.albumId = albumId;
-        this.id = id;
-        this.title = title;
-        this.url = url;
-        this.thumbnailUrl = thumbnailUrl;
-    }
 
-    public Integer getAlbumId() {
-        return albumId;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public String getThumbnailUrl() {
-        return thumbnailUrl;
-    }
 }
