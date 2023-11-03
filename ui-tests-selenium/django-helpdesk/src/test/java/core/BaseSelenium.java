@@ -26,7 +26,7 @@ abstract public class BaseSelenium {
 //        options.addArguments("--remote-allow-origins=*");
 //        driver = new ChromeDriver(options);
 
-//        driver = new ChromeDriver();
+//        driver = new ChromeDriver(); //?
 //        driver.manage().window().maximize();
         driver.manage().window().setSize(new Dimension(1280,1280));
         driver.manage().timeouts().pageLoadTimeout(15, TimeUnit.SECONDS);
@@ -37,8 +37,8 @@ abstract public class BaseSelenium {
 
     @AfterEach
     public void shutdown() {
-        driver.close(); //Закройте текущее окно, выйдя из браузера, если это последнее открытое окно.
         driver.quit(); //Завершает работу этого драйвера, закрывая все связанные окна.
+        driver.close(); //Закройте текущее окно, выйдя из браузера, если это последнее открытое окно.
     }
 
 
