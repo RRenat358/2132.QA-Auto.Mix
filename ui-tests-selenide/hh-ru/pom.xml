@@ -8,7 +8,7 @@
         <artifactId>ui-tests-selenide</artifactId>
         <groupId>ru.rrenat358</groupId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/>
+<!--        <relativePath/>-->
     </parent>
 
     <artifactId>hh-ru</artifactId>

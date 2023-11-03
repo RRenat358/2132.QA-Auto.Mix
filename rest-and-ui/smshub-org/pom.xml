@@ -5,18 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>ui-tests-selenide</artifactId>
+        <artifactId>rest-and-ui</artifactId>
         <groupId>ru.rrenat358</groupId>
         <version>0.0.1-SNAPSHOT</version>
-<!--        <relativePath/>-->
     </parent>
 
-    <artifactId>appleinsider-ru</artifactId>
-
-<!--
-    <dependencies>
-    </dependencies>
--->
+    <artifactId>smshub-org</artifactId>
 
 
 </project>

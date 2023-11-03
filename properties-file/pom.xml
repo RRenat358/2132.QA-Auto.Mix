@@ -8,7 +8,7 @@
         <artifactId>2132.QA-Auto.Mix</artifactId>
         <groupId>ru.rrenat358</groupId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/>
+<!--        <relativePath/>-->
     </parent>
 
     <artifactId>properties-file</artifactId>

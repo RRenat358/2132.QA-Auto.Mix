@@ -10,7 +10,7 @@
         <artifactId>2132.QA-Auto.Mix</artifactId>
         <groupId>ru.rrenat358</groupId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/>
+<!--        <relativePath/>-->
     </parent>
 
     <artifactId>rest-and-ui</artifactId>
@@ -20,12 +20,20 @@
         <module>smshub-org</module>
     </modules>
 
+
     <dependencies>
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
 
